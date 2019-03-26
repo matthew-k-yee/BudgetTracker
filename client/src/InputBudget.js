@@ -2,17 +2,33 @@ import React from 'react'
 
 const InputBudget = props => {
   return (
-    <form>
-      <select>
-        <option value="">Alcohol & Bars</option>
-        <option value="">Groceries</option>
-        <option value="">Misc</option>
-        <option value="">Restaurant</option>
-        <option value="">Travel</option>
-        <option value="">Utilities</option>
+    <form onSubmit={props.handleSubmit}>
+      <select 
+          name='categories'
+          value={props.categories} 
+          onChange={props.handleChange}>
+        <option value="alcohol">Alcohol & Bars</option>
+        <option value="groceries">Groceries</option>
+        <option value="misc">Misc</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="travel">Travel</option>
+        <option value="utilities">Utilities</option>
       </select>
-      <input type='text' placeholder='Description'/>
-      <input type="number" placeholder='Value'/>
+      <input 
+        type='text' 
+        name='description'
+        value={props.description} 
+        placeholder='Description' 
+        onChange={props.handleChange}
+        />
+      <input 
+        type="number" 
+        name='amount'
+        value={props.amount}
+        placeholder='Amount' 
+        onChange={props.handleChange}
+        />
+      <button type='submit'>Add</button>
     </form>
   )
 }
