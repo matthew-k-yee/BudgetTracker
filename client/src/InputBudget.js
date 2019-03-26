@@ -7,6 +7,7 @@ const InputBudget = props => {
           name='categories'
           value={props.categories} 
           onChange={props.handleChange}>
+        <option value=''>--Select an option--</option>
         <option value="alcohol">Alcohol & Bars</option>
         <option value="groceries">Groceries</option>
         <option value="misc">Misc</option>

@@ -10,7 +10,8 @@ class Budget extends Component {
         categories: '',
         description: '',
         amount: ''
-      }
+      }, 
+      expenseList: []
     })
   }
 
@@ -29,8 +30,23 @@ class Budget extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log(this.state.expenses)
+    this.setState(prevState => {
+      return {
+        expenseList: [
+          ...prevState.expenseList,
+          prevState.expenses
+        ], 
+        expenses: {
+          categories: '',
+          description: '',
+          amount: ''
+        }
+      }
+    })
+    console.log(this.state.expenseList)
   }
+
+
 
   render() {
     return (
@@ -43,7 +59,9 @@ class Budget extends Component {
           description={this.state.expenses.description}
           amount={this.state.expenses.amount}
         />
-        <BudgetGrid />
+        <BudgetGrid 
+          expenseList={this.state.expenseList}
+        />
       </div>
     )
   }
