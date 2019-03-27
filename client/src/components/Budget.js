@@ -1,6 +1,7 @@
 import React, { Component } from 'react' 
 import BudgetGrid from './BudgetGrid'
 import InputBudget from './InputBudget'
+import {defaultTransactions} from '../modules/default'
 
 class Budget extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Budget extends Component {
         description: '',
         amount: ''
       }, 
-      expenseList: []
+      expenseList: defaultTransactions
     })
   }
 

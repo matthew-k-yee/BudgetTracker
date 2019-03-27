@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Budget from './Budget'
+import Budget from './components/Budget'
 import './App.css';
 
 class App extends Component {
