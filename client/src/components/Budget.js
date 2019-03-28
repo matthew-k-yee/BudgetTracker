@@ -18,7 +18,7 @@ class Budget extends Component {
       budget: {
         income: ''
       }, 
-      budgetList: defaultBudget, 
+      budgetList: [], 
 
     })
   }
