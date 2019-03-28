@@ -6,7 +6,7 @@ const InputBudget = props => {
       <select 
           name='categories'
           value={props.categories} 
-          onChange={props.handleChange}>
+          required onChange={props.handleChange}>
         <option value=''>--Select an option--</option>
         <option value="Alcohol">Alcohol & Bars</option>
         <option value="Groceries">Groceries</option>
@@ -21,14 +21,14 @@ const InputBudget = props => {
         name='description'
         value={props.description} 
         placeholder='Description' 
-        onChange={props.handleChange}
+        required onChange={props.handleChange}
         />
       <input 
         type="number" 
         name='amount'
         value={props.amount}
         placeholder='Amount' 
-        onChange={props.handleChange}
+        required onChange={props.handleChange}
         />
       <button type='submit'>Add</button>
     </form>

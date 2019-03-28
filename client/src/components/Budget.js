@@ -49,7 +49,6 @@ class Budget extends Component {
         expenseList:[...prevState.expenseList.filter( (list, i) => i !== index)]
       }
     })
-    console.log(this.state.expenseList)
   }
   // income = () => {
   //   let list = this.state.expenseList
