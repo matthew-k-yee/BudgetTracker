@@ -13,7 +13,7 @@ class Budget extends Component {
         description: '',
         amount: ''
       }, 
-      expenseList: defaultTransactions, 
+      expenseList: defaultTransactions,
       total: []
     })
   }
@@ -38,7 +38,12 @@ class Budget extends Component {
         expenseList: [
           ...prevState.expenseList,
           prevState.expenses
-        ]
+        ], 
+        expenses: {
+          categories: '',
+          description: '',
+          amount: ''
+        }
       }
     })
   }
@@ -50,36 +55,27 @@ class Budget extends Component {
       }
     })
   }
-  // income = () => {
-  //   let list = this.state.expenseList
-  //   let total = []
-  //   for ( let i = 0; i < list.length; i++) {
-  //     if ( list[i].categories === 'Income')
-  //     total.push(list[i].amount)
-  //   }
-  //   this.setState({
-  //     total: total.reduce((a,c) => a + c)
-  //   })
-  // }
 
-  // handleIncomeUpdate = e => {
-  //   let list = this.state.expenseList
-  //   let total = []
-  //   for ( let i = 0; i < list.length; i++) {
-  //     if ( list[i].categories === 'Income')
-  //     total.push(list[i].amount)
-  //   }
-  //   this.setState({
-  //     total: total.reduce((a,c) => a + c)
-  //   })
-  // }
+  income = () => {
+    let list = this.state.expenseList
+    let arr = [];
+    for ( let i = 0; i < list.length; i++) {
+      if ( list[i].categories === 'Income') {
+        let amount = parseInt(list[i].amount)
+        arr.push(amount)
+      }
+    }
+    // this.setState({
+    //   total: arr
+    // })
+    console.log(arr)
+  }
 
   // componentDidMount() {
   //   this.income()
   // }
-
   render() {
-    console.log(this.state.expenseList)
+    // {this.income()}
     return (
       <div>
         <InputBudget 
@@ -91,9 +87,10 @@ class Budget extends Component {
         />
         <BudgetGrid 
           expenseList={this.state.expenseList}
+          handleUpdate={this.handleUpdate}
           handleDelete={this.handleDelete}
         />
-        <Balance total={this.state.total}/>
+        <Balance expenseList={this.state.expenseList}/>
       </div>
     )
   }
