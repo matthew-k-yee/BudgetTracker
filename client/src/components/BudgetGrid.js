@@ -7,7 +7,7 @@ const BudgetGrid = props => {
       return (
         <div key={index}>
           <p>{list.categories} {list.description} ${list.amount}</p>
-          <button onClick={props.handleUpdate}>Update</button>
+          {/* <button onClick={props.handleUpdate}>Update</button> */}
           <button onClick={() => props.handleDelete(index)}>Remove</button>
         </div>
       )

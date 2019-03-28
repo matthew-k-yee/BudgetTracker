@@ -1,8 +1,9 @@
 import React, { Component } from 'react' 
 import BudgetGrid from './BudgetGrid'
-import InputBudget from './InputBudget'
+import InputExpense from './InputExpense'
 import Balance from './Balance'
-import {defaultTransactions} from '../modules/default'
+import {defaultTransactions, defaultBudget} from '../modules/default'
+import InputBudget from './InputBudget';
 
 class Budget extends Component {
   constructor(props) {
@@ -14,7 +15,11 @@ class Budget extends Component {
         amount: ''
       }, 
       expenseList: defaultTransactions,
-      total: []
+      budget: {
+        income: ''
+      }, 
+      budgetList: defaultBudget, 
+
     })
   }
 
@@ -56,29 +61,40 @@ class Budget extends Component {
     })
   }
 
-  income = () => {
-    let list = this.state.expenseList
-    let arr = [];
-    for ( let i = 0; i < list.length; i++) {
-      if ( list[i].categories === 'Income') {
-        let amount = parseInt(list[i].amount)
-        arr.push(amount)
+  handleSavingsChange = e => {
+    const { name, value } = e.target
+    this.setState({
+      budget: {
+        [name]: value
       }
-    }
-    // this.setState({
-    //   total: arr
-    // })
-    console.log(arr)
+    })
   }
 
-  // componentDidMount() {
-  //   this.income()
-  // }
+  handleSavingsSubmit = e => {
+    e.preventDefault()
+    this.setState(prevState => {
+      return {
+        budgetList: [
+          ...prevState.budgetList,
+          prevState.budget
+        ], 
+        budget: {
+          income: ''
+        }
+      }
+    })
+  }
+
   render() {
-    // {this.income()}
+    console.log(this.state.budgetList)
     return (
       <div>
         <InputBudget 
+          handleSavingsChange={this.handleSavingsChange}
+          handleSavingsSubmit={this.handleSavingsSubmit}
+          budget={this.state.budget.income}
+          />
+        {/* <InputExpense 
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           categories={this.state.expenses.categories}
@@ -89,8 +105,8 @@ class Budget extends Component {
           expenseList={this.state.expenseList}
           handleUpdate={this.handleUpdate}
           handleDelete={this.handleDelete}
-        />
-        <Balance expenseList={this.state.expenseList}/>
+        /> */}
+        <Balance budgetList={this.state.budgetList}/>
       </div>
     )
   }
