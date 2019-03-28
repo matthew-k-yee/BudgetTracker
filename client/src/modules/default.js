@@ -19,4 +19,9 @@ export const defaultTransactions = [
     description: 'Paycheck',
     amount: 5700,
   },
+  {
+    categories: 'Income',
+    description: 'Paycheck',
+    amount: 300,
+  },
 ];

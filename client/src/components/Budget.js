@@ -1,6 +1,7 @@
 import React, { Component } from 'react' 
 import BudgetGrid from './BudgetGrid'
 import InputBudget from './InputBudget'
+import Balance from './Balance'
 import {defaultTransactions} from '../modules/default'
 
 class Budget extends Component {
@@ -12,7 +13,8 @@ class Budget extends Component {
         description: '',
         amount: ''
       }, 
-      expenseList: defaultTransactions
+      expenseList: defaultTransactions, 
+      total: []
     })
   }
 
@@ -36,23 +38,51 @@ class Budget extends Component {
         expenseList: [
           ...prevState.expenseList,
           prevState.expenses
-        ], 
-        expenses: {
-          categories: '',
-          description: '',
-          amount: ''
-        }
+        ]
+      }
+    })
+  }
+
+  handleDelete = index => {
+    this.setState(prevState => {
+      return { 
+        expenseList:[...prevState.expenseList.filter( (list, i) => i !== index)]
       }
     })
     console.log(this.state.expenseList)
   }
+  // income = () => {
+  //   let list = this.state.expenseList
+  //   let total = []
+  //   for ( let i = 0; i < list.length; i++) {
+  //     if ( list[i].categories === 'Income')
+  //     total.push(list[i].amount)
+  //   }
+  //   this.setState({
+  //     total: total.reduce((a,c) => a + c)
+  //   })
+  // }
 
+  // handleIncomeUpdate = e => {
+  //   let list = this.state.expenseList
+  //   let total = []
+  //   for ( let i = 0; i < list.length; i++) {
+  //     if ( list[i].categories === 'Income')
+  //     total.push(list[i].amount)
+  //   }
+  //   this.setState({
+  //     total: total.reduce((a,c) => a + c)
+  //   })
+  // }
 
+  // componentDidMount() {
+  //   this.income()
+  // }
 
   render() {
+    console.log(this.state.expenseList)
     return (
       <div>
-        <h1>Description</h1>
         <InputBudget 
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
@@ -62,7 +92,9 @@ class Budget extends Component {
         />
         <BudgetGrid 
           expenseList={this.state.expenseList}
+          handleDelete={this.handleDelete}
         />
+        <Balance total={this.state.total}/>
       </div>
     )
   }
