@@ -5,6 +5,7 @@ const Balance = props => {
   console.log(list)
     return (
       <div>
+        <h1>Budget</h1>
         <h1>${list.reduce((a,c) => a +c,0)}</h1>
       </div>
     )
