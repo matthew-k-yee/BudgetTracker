@@ -1,6 +1,7 @@
 import React, { Component } from 'react' 
 import BudgetGrid from './BudgetGrid'
 import InputExpense from './InputExpense'
+import Income from './Income'
 import Balance from './Balance'
 import Expenses from './Expenses'
 import {defaultTransactions, defaultBudget} from '../modules/default'
@@ -87,14 +88,13 @@ class Budget extends Component {
   }
 
   render() {
-    console.log(this.state.budgetList)
     return (
       <div>
-        {/* <InputBudget 
+        <InputBudget 
           handleSavingsChange={this.handleSavingsChange}
           handleSavingsSubmit={this.handleSavingsSubmit}
           budget={this.state.budget.income}
-          /> */}
+          />
         <InputExpense 
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
@@ -108,7 +108,11 @@ class Budget extends Component {
           handleDelete={this.handleDelete}
         />
         <Expenses amount={this.state.expenseList}/>
-        {/* <Balance budgetList={this.state.budgetList}/> */}
+        <Income budgetList={this.state.budgetList}/>
+        <Balance 
+          amount={this.state.expenseList}
+          budget={this.state.budgetList}
+          />
       </div>
     )
   }

@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react' 
 
-const Balance = props => { 
-  let list = props.budgetList.map( list => parseInt(list.income))
-  console.log(list)
-    return (
-      <div>
-        <h1>Budget</h1>
-        <h1>${list.reduce((a,c) => a +c,0)}</h1>
-      </div>
-    )
-  }
+const Balance = props => {
+  const debts = props.amount.map( debt => parseInt(debt.amount)).reduce((a,c) => a + c, 0)
+  const incomes = props.budget.map( income => parseInt(income.income)).reduce((a,c) => a + c, 0)
+  let total = incomes - debts
+  return (
+    <div>
+      <h1>Balance</h1>
+      <p>${total}</p>
+    </div>
+  )
+}
+
 export default Balance

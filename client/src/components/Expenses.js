@@ -2,7 +2,6 @@ import React from 'react'
 
 const Expenses = props => {
   const amount = props.amount.map( expense => parseInt(expense.amount))
-  console.log(amount)
   return (
     <div>
       <h1>Expenses</h1>
