@@ -2,18 +2,24 @@ import React from 'react'
 
 const InputBudget = props => {
   return (
-    <form onSubmit={props.handleSavingsSubmit}>
-      <label>
-        Enter Savings
-      </label>
-      <input 
-        type="number" 
-        name='income'
-        value={props.budget.income}
-        onChange={props.handleSavingsChange}
-        />
-      <button type='submit'>Add</button>
-    </form>
+    <div className='container budget-input'>
+      <form onSubmit={props.handleSavingsSubmit}>
+        <div className=''>
+          <label className='col-sm-3 col-form-label'><h5>Enter Savings</h5></label>
+          <div className='col-sm-4 budget-form-field'> 
+            <input 
+              className='form-control'
+              type="number" 
+              name='income'
+              placeholder='$$$'
+              value={props.budget.income}
+              onChange={props.handleSavingsChange}
+              />
+               <button className='btn btn-success' type='submit'>Add</button>
+            </div>
+          </div>
+      </form>
+    </div>
   )
 }
 

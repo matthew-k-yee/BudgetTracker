@@ -1,5 +1,5 @@
 import React, { Component } from 'react' 
-import BudgetGrid from './BudgetGrid'
+import ExpenseList from './ExpenseList'
 import InputExpense from './InputExpense'
 import Income from './Income'
 import Balance from './Balance'
@@ -102,7 +102,7 @@ class Budget extends Component {
           description={this.state.expenses.description}
           amount={this.state.expenses.amount}
         />
-        <BudgetGrid 
+        <ExpenseList 
           expenseList={this.state.expenseList}
           handleUpdate={this.handleUpdate}
           handleDelete={this.handleDelete}
