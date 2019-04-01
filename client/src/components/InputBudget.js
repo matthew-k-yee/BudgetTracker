@@ -12,7 +12,7 @@ const InputBudget = props => {
               type="number" 
               name='income'
               placeholder='$$$'
-              value={props.budget.income}
+              value={props.income}
               onChange={props.handleSavingsChange}
               />
                <button className='btn btn-success' type='submit'>Add</button>

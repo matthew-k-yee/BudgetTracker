@@ -93,7 +93,7 @@ class Budget extends Component {
         <InputBudget 
           handleSavingsChange={this.handleSavingsChange}
           handleSavingsSubmit={this.handleSavingsSubmit}
-          budget={this.state.budget.income}
+          income={this.state.budget.income}
           />
         <InputExpense 
           handleChange={this.handleChange}
