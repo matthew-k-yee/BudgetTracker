@@ -1,4 +1,6 @@
 import React from 'react' 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const Balance = props => {
   const debts = props.amount.map( debt => parseInt(debt.amount)).reduce((a,c) => a + c, 0)
@@ -6,7 +8,8 @@ const Balance = props => {
   let total = incomes - debts
   return (
     <div>
-      <h1>Balance</h1>
+      <h3>Balance</h3>
+      <FontAwesomeIcon icon='balance-scale'/>
       <p>${total}</p>
     </div>
   )

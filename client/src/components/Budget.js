@@ -1,10 +1,8 @@
 import React, { Component } from 'react' 
 import ExpenseList from './ExpenseList'
 import InputExpense from './InputExpense'
-import Income from './Income'
-import Balance from './Balance'
-import Expenses from './Expenses'
-import {defaultTransactions, defaultBudget} from '../modules/default'
+import Total from './Total'
+import {defaultTransactions} from '../modules/default'
 import InputBudget from './InputBudget';
 
 class Budget extends Component {
@@ -107,12 +105,10 @@ class Budget extends Component {
           handleUpdate={this.handleUpdate}
           handleDelete={this.handleDelete}
         />
-        <Expenses amount={this.state.expenseList}/>
-        <Income budgetList={this.state.budgetList}/>
-        <Balance 
+        <Total 
           amount={this.state.expenseList}
           budget={this.state.budgetList}
-          />
+        />
       </div>
     )
   }

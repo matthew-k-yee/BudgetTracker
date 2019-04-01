@@ -2,36 +2,29 @@ import React from 'react'
 
 const ExpenseList = props => {
   return (
-    <div>
+    <table className='table table-striped table-md content'>
+      <tbody>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Description</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Actions</th>
+      </tr>
     {props.expenseList.map( (list, index) => {
       return (
-        <div key={index}>
-          <p>{list.categories} {list.description} ${list.amount}</p>
-          <button onClick={() => props.handleDelete(index)}>Remove</button>
-        </div>
+        <tr key={index}>
+          <td>{list.categories}</td>
+          <td>{list.description} </td>
+          <td>${list.amount}</td>
+          <td>
+            <button onClick={() => props.handleDelete(index)}>-</button>
+          </td>
+        </tr>
       )
     })}
-    </div>
+      </tbody>
+    </table>
   )
   
 }
 export default ExpenseList
-
-  // <tr>
-  //   <td>
-  //     <h3>Category</h3>
-  //   </td>
-  //   <td>
-  //     <h3>Description</h3>
-  //   </td>
-  //   <td>
-  //     <h3>Amount</h3>
-  //   </td>
-  // </tr>
-
-
-
-        {/* <div key={index}>
-          <p>{list.categories} {list.description} ${list.amount}</p>
-          <button onClick={() => props.handleDelete(index)}>Remove</button>
-        </div> */}

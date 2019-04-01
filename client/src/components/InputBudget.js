@@ -4,7 +4,7 @@ const InputBudget = props => {
   return (
     <div className='container budget-input'>
       <form onSubmit={props.handleSavingsSubmit}>
-        <div className=''>
+        <div className='budget-box'>
           <label className='col-sm-3 col-form-label'><h5>Enter Savings</h5></label>
           <div className='col-sm-4 budget-form-field'> 
             <input 

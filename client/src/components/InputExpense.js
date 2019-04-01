@@ -4,11 +4,12 @@ const InputExpense = props => {
   return (
     <div className='container'>
       <form onSubmit={props.handleSubmit}>
-      <div className='form-group row'>
+      <div className='form-group row expense-box'>
         <label className='col-sm-12 col-form-label'><h5>Enter Expenses</h5></label>
         <div className='col-sm-12 expense-input'>
           <select 
               name='categories'
+              className='col-sm-3'
               value={props.categories} 
               required onChange={props.handleChange}>
             <option value=''>--Select an option--</option>
@@ -20,6 +21,7 @@ const InputExpense = props => {
             <option value="Utilities">Utilities</option>
           </select>
           <input 
+            className='col-sm-5'
             type='text' 
             name='description'
             value={props.description} 
@@ -27,6 +29,7 @@ const InputExpense = props => {
             required onChange={props.handleChange}
             />
           <input 
+            className='col-sm-2'
             type="number" 
             name='amount'
             value={props.amount}
@@ -34,28 +37,10 @@ const InputExpense = props => {
             required onChange={props.handleChange}
             />
         </div>
+        <button className='add-button btn btn-success' type='submit'>Add</button>
       </div>
-        <button className='btn btn-success' type='submit'>Add</button>
       </form>
     </div>
   )
 }
 export default InputExpense
-
-
-
-{/* <form onSubmit={props.handleSavingsSubmit}>
-<div className='form-group row'>
-  <label className='col-sm-3 col-form-label'>Enter Savings</label>
-  <div className='col-sm-9'> 
-    <input 
-      className='form-control'
-      type="number" 
-      name='income'
-      value={props.budget.income}
-      onChange={props.handleSavingsChange}
-      />
-    </div>
-  </div>
-<button className='btn btn-success' type='submit'>Add</button>
-</form> */}
