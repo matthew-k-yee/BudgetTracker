@@ -2,7 +2,7 @@ import React from 'react'
 
 const InputExpense = props => {
   return (
-    <div className='container'>
+    <div className='container w-50 p-3'>
       <form onSubmit={props.handleSubmit}>
       <div className='form-group row expense-box'>
         <label className='col-sm-12 col-form-label'><h5>Enter Expenses</h5></label>

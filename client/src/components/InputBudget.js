@@ -2,7 +2,7 @@ import React from 'react'
 
 const InputBudget = props => {
   return (
-    <div className='container budget-input'>
+    <div className='container budget-input w-50 p-3'>
       <form onSubmit={props.handleSavingsSubmit}>
         <div className='budget-box'>
           <label className='col-sm-3 col-form-label'><h5>Enter Savings</h5></label>

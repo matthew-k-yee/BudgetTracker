@@ -5,10 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBalanceScale, faCreditCard, faMoneyBill} from '@fortawesome/free-solid-svg-icons'
+import { faBalanceScale, faCreditCard, faMoneyBill, faTrashAlt, faEdit} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faBalanceScale, faCreditCard, faMoneyBill)
+library.add(faBalanceScale, faCreditCard, faMoneyBill, faTrashAlt, faEdit)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

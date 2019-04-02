@@ -53,6 +53,25 @@ class Budget extends Component {
     })
   }
 
+  handleChangeAmount = (e) => {
+    this.setState({
+      expenses: {
+        amount: e.target.value
+      }
+    })
+  }
+
+  onSubmitChange = e => {
+    e.preventDefault()
+    this.setState({
+      expenses: {
+        categories: '',
+        description: '',
+        amount: ''
+      }
+    })
+  }
+
   handleDelete = index => {
     this.setState(prevState => {
       return { 
@@ -85,6 +104,8 @@ class Budget extends Component {
     })
   }
 
+
+
   render() {
     return (
       <div>
@@ -104,6 +125,7 @@ class Budget extends Component {
           expenseList={this.state.expenseList}
           handleUpdate={this.handleUpdate}
           handleDelete={this.handleDelete}
+          handleContentChange={this.handleContentChange}
         />
         <Total 
           amount={this.state.expenseList}
