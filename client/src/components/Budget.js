@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ExpenseList from './ExpenseList'
 import InputExpense from './InputExpense'
 import Total from './Total'
+import Chart from './Chart'
 import {defaultTransactions} from '../modules/default'
 import InputBudget from './InputBudget';
 
@@ -131,6 +132,7 @@ class Budget extends Component {
           amount={this.state.expenseList}
           budget={this.state.budgetList}
         />
+        <Chart />
       </div>
     )
   }
