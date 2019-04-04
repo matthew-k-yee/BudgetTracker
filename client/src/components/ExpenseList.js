@@ -27,10 +27,11 @@ const ExpenseList = props => {
               <FontAwesomeIcon icon='edit'/>
             </button>} */}
 
-            
-            <button onClick={() => props.handleDelete(index)}>
-              <FontAwesomeIcon icon='trash-alt' />
-            </button>
+            <td>
+              <button onClick={() => props.handleDelete(index)}>
+                <FontAwesomeIcon icon='trash-alt' />
+              </button>
+            </td>
 
         </tr>
       )
