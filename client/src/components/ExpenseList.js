@@ -1,4 +1,5 @@
 import React from 'react'
+import InputExpense from './InputExpense'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ExpenseList = props => {
@@ -15,13 +16,22 @@ const ExpenseList = props => {
       return (
         <tr key={index}>
           <td>{list.categories}</td>
-          <td>{list.description} </td>
+          <td>{list.description}</td>
           <td>${list.amount}</td>
-          <td>
+
+
+          {/* {props.id === index ?
+              <p>example</p>
+            :
+            <button onClick={(e) => props.handleId(e, index,list)}>
+              <FontAwesomeIcon icon='edit'/>
+            </button>} */}
+
+            
             <button onClick={() => props.handleDelete(index)}>
               <FontAwesomeIcon icon='trash-alt' />
             </button>
-          </td>
+
         </tr>
       )
     })}

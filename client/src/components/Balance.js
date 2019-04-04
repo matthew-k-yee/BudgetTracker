@@ -7,7 +7,7 @@ const Balance = props => {
   const incomes = props.budget.map( income => parseInt(income.income)).reduce((a,c) => a + c, 0)
   let total = incomes - debts
   let color = ''
-  let c = (total < 0) ? color = 'negative' : color = 'positive'
+  total < 0 ? color = 'negative' : color = 'positive'
   return (
     <div>
       <h3>Balance</h3>

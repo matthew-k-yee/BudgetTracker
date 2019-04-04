@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ExpenseList from './ExpenseList'
 import InputExpense from './InputExpense'
 import Total from './Total'
-import Chart from './Chart'
+// import Chart from './Chart'
 import {defaultTransactions} from '../modules/default'
 import InputBudget from './InputBudget';
 
@@ -20,6 +20,7 @@ class Budget extends Component {
         income: ''
       }, 
       budgetList: [], 
+      editID: ''
 
     })
   }
@@ -106,6 +107,26 @@ class Budget extends Component {
   }
 
 
+  handleId = (e,index, list) => {
+    this.setState({
+      editID: index, 
+      // expenses: {
+      //   categories: list.categories,
+      //   description: list.description,
+      //   amount: list.amount
+      // }
+    })
+    console.log(this.state.expenses)
+  }
+
+  handleUpdate = e => {
+    e.preventDefault()
+  }
+
+  handleCommentChange = e => {
+
+  }
+
 
   render() {
     return (
@@ -126,13 +147,17 @@ class Budget extends Component {
           expenseList={this.state.expenseList}
           handleUpdate={this.handleUpdate}
           handleDelete={this.handleDelete}
-          handleContentChange={this.handleContentChange}
+          handleId={this.handleId}
+          id={this.state.editID}
+          expenses={this.state.expenses}
         />
         <Total 
           amount={this.state.expenseList}
           budget={this.state.budgetList}
         />
-        <Chart />
+        {/* <Chart 
+          amount={this.state.expenseList}
+          budget={this.state.budgetList}/> */}
       </div>
     )
   }

@@ -2,28 +2,28 @@ export const defaultTransactions = [
   {
     categories: 'Groceries',
     description: "Trader Joe's food",
-    amount: 423.34,
+    amount: 68.34,
   },
   {
     categories: 'Travel',
-    description: 'Gas',
+    description: 'Flight to Los Angeles',
     amount: 764.73,
   },
   {
     categories: 'Groceries',
     description: 'Milk & Eggs for the pancake party with neighbors',
-    amount: 2300,
+    amount: 30,
   },
-  // {
-  //   categories: 'Income',
-  //   description: 'Paycheck',
-  //   amount: 5700,
-  // },
-  // {
-  //   categories: 'Income',
-  //   description: 'Paycheck',
-  //   amount: 300,
-  // },
+  {
+    categories: 'Travel',
+    description: 'MTA',
+    amount: 121,
+  },
+  {
+    categories: 'Restaurant',
+    description: 'Cocoron',
+    amount: 50,
+  },
 ];
 
 export const defaultBudget = [
