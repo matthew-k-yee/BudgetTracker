@@ -5,7 +5,7 @@
 
 ## Summary
 Budget tracking app that allows a user to input their income/budget and expenses.  
-The lower part of the screen render's their balance, if they are over their balance the number is red,  
+The lower part of the screen renders their balance, if they are over their balance the number is red,  
 if they're under the number is green. 
 
 
