@@ -4,12 +4,12 @@ import './App.css';
 
 class App extends Component {
   render() {
-    return (
+    return ( 
       <div className="App">
         <Budget />
       </div>
     );
   }
-}
+}   
 
 export default App;

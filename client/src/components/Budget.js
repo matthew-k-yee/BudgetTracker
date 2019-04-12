@@ -60,8 +60,8 @@ class Budget extends Component {
       expenses: {
         amount: e.target.value
       }
-    })
-  }
+    })  
+  }     
 
   onSubmitChange = e => {
     e.preventDefault()
